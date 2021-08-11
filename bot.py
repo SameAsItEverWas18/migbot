@@ -76,4 +76,4 @@ if num == 100:
     async def on_ready():
         sendfour.start()
 
-client.run('ODc0ODczMDU4MzM3MzU3ODQ0.YRNTBw.AwNf3o7apZd-braPJLWprLc9yus')
+client.run('Token')
