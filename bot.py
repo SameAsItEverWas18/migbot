@@ -2,6 +2,7 @@ import discord
 from discord.ext import tasks
 import random
 import fnmatch
+from token import token
 client = discord.Client()
 num = 0
 
@@ -76,4 +77,4 @@ if num == 100:
     async def on_ready():
         sendfour.start()
 
-client.run('Token')
+client.run(token)
