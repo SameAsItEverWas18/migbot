@@ -4,27 +4,27 @@ import random
 client = discord.Client()
 num = 0
 
-@tasks.loop(minutes=20)
+@tasks.loop(minutes=40)
 async def sendone():
     channel = client.get_channel(614877948679553032)
     channel2 = client.get_channel(665397604728832002)
     await channel.send(random.choice(open('migmsg.txt').readlines()))
     await channel2.send(random.choice(open('migmsg.txt').readlines()))
 
-@tasks.loop(minutes=20)
+@tasks.loop(minutes=40)
 async def sendtwo():
     channel = client.get_channel(614877948679553032)
     await channel.send(random.choice(open('migmsg.txt').readlines()))
     await channel.send(random.choice(open('migmsg.txt').readlines()))
 
-@tasks.loop(minutes=20)
+@tasks.loop(minutes=40)
 async def sendthree():
     channel = client.get_channel(614877948679553032)
     await channel.send(random.choice(open('migmsg.txt').readlines()))
     await channel.send(random.choice(open('migmsg.txt').readlines()))
     await channel.send(random.choice(open('migmsg.txt').readlines()))
 
-@tasks.loop(minutes=20)
+@tasks.loop(minutes=40)
 async def sendfour():
     channel = client.get_channel(665397604728832002)
     await channel.send(random.choice(open('migmsg.txt').readlines()))
