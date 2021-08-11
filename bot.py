@@ -3,7 +3,7 @@ from discord.ext import tasks
 import random
 import fnmatch
 import asyncio
-import tokenext
+from tokenext import token
 client = discord.Client()
 num = 0
 
@@ -81,8 +81,8 @@ async def on_message(message):
 if num < 85:
     @client.event
     async def on_ready():
-        async with message.channel.typing():
-            await asyncio.sleep(5)
+#        async with message.channel.typing():
+#            await asyncio.sleep(5)
             sendone.start()
 if num < 95 and num > 85:
     @client.event
