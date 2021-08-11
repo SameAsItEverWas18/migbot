@@ -3,7 +3,7 @@ from discord.ext import tasks
 import random
 import fnmatch
 import asyncio
-from token.py import token
+from tokenext import token
 client = discord.Client()
 num = 0
 
