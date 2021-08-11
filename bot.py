@@ -47,32 +47,20 @@ async def sendfour():
 async def on_message(message):
     if message.author == client.user:
         return
-
-    if "MIGUEL" in message.content:
-        async with message.channel.typing():
-            await asyncio.sleep(5)
-            await message.channel.send(random.choice(open('migmsg.txt').readlines()))
-            num = random.choice(range(10, 101))
-
-    if "mig" in message.content:
+    
+    if "mig" in message.content.lower:
        async with message.channel.typing():
             await asyncio.sleep(5)
             await message.channel.send(random.choice(open('migmsg.txt').readlines()))
             num = random.choice(range(10, 101))
 
-    if "miggy" in message.content:
+    if "kirinvision" in message.content.lower:
        async with message.channel.typing():
             await asyncio.sleep(5)
             await message.channel.send(random.choice(open('migmsg.txt').readlines()))
             num = random.choice(range(10, 101))
 
-    if "kirinvision" in message.content:
-       async with message.channel.typing():
-            await asyncio.sleep(5)
-            await message.channel.send(random.choice(open('migmsg.txt').readlines()))
-            num = random.choice(range(10, 101))
-
-    if "lasvegas63" in message.content:
+    if "lasvegas" in message.content.lower:
        async with message.channel.typing():
             await asyncio.sleep(5)
             await message.channel.send(random.choice(open('migmsg.txt').readlines()))
