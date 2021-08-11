@@ -1,7 +1,6 @@
 import discord
 from discord.ext import tasks
 import random
-import fnmatch
 client = discord.Client()
 num = 0
 
