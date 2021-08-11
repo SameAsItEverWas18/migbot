@@ -1,0 +1,78 @@
+import discord
+from discord.ext import tasks
+import random
+import fnmatch
+client = discord.Client()
+
+@tasks.loop(minutes=20)
+async def sendone():
+    channel = client.get_channel(614877948679553032)
+    channel2 = client.get_channel(665397604728832002)
+    await channel.send(random.choice(open('migmsg.txt').readlines()))
+    await channel2.send(random.choice(open('migmsg.txt').readlines()))
+
+#@tasks.loop(minutes=20)
+#async def sendtwo():
+ #   channel = client.get_channel(614877948679553032)
+ #   await channel.send(random.choice(open('migmsg.txt').readlines()))
+ #   await channel.send(random.choice(open('migmsg.txt').readlines()))
+
+#@tasks.loop(minutes=20)
+#async def sendthree():
+#    channel = client.get_channel(614877948679553032)
+#    await channel.send(random.choice(open('migmsg.txt').readlines()))
+#    await channel.send(random.choice(open('migmsg.txt').readlines()))
+#    await channel.send(random.choice(open('migmsg.txt').readlines()))
+
+#@tasks.loop(minutes=20)
+#async def sendfour():
+#    channel = client.get_channel(665397604728832002)
+#    await channel.send(random.choice(open('migmsg.txt').readlines()))
+#    await channel.send(random.choice(open('migmsg.txt').readlines()))
+#    await channel.send(random.choice(open('migmsg.txt').readlines()))
+#    await channel.send(random.choice(open('migmsg.txt').readlines()))
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+#    if "miguel" in message.content:
+#       await message.channel.send(random.choice(open('migmsg.txt').readlines()))
+
+    if "MIGUEL" in message.content:
+       await message.channel.send(random.choice(open('migmsg.txt').readlines()))
+
+    if "mig" in message.content:
+       await message.channel.send(random.choice(open('migmsg.txt').readlines()))
+
+    if "miggy" in message.content:
+       await message.channel.send(random.choice(open('migmsg.txt').readlines()))
+
+    if "kirinvision" in message.content:
+       await message.channel.send(random.choice(open('migmsg.txt').readlines()))
+
+    if "lasvegas63" in message.content:
+       await message.channel.send(random.choice(open('migmsg.txt').readlines()))
+
+
+num = random.choice(range(10, 101))
+
+if num < 100:
+    @client.event
+    async def on_ready():
+        sendone.start()
+#if num < 100 and num > 51:
+#    @client.event
+#    async def on_ready():
+#        sendtwo.start()
+#        print(num)
+#if num < 96 and num > 99:
+#    @client.event
+#    async def on_ready():
+#        sendthree.start()
+#if num == 100:
+#    @client.event
+#    async def on_ready():
+#        sendfour.start()
+client.run('Token')
