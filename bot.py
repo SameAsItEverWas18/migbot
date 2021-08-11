@@ -11,14 +11,18 @@ num = 0
 async def sendone():
     channel = client.get_channel(614877948679553032)
     channel2 = client.get_channel(665397604728832002)
-    await channel.send(random.choice(open('migmsg.txt').readlines()))
-    await channel2.send(random.choice(open('migmsg.txt').readlines()))
+    async with message.channel.typing():
+        await asyncio.sleep(5)
+        await channel.send(random.choice(open('migmsg.txt').readlines()))
+        await channel2.send(random.choice(open('migmsg.txt').readlines()))
 
 @tasks.loop(minutes=20)
 async def sendtwo():
     channel = client.get_channel(614877948679553032)
-    await channel.send(random.choice(open('migmsg.txt').readlines()))
-    await channel.send(random.choice(open('migmsg.txt').readlines()))
+    async with message.channel.typing():
+        await asyncio.sleep(5)
+        await channel.send(random.choice(open('migmsg.txt').readlines()))
+        await channel.send(random.choice(open('migmsg.txt').readlines()))
 
 @tasks.loop(minutes=20)
 async def sendthree():
